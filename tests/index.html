@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="assets/dummy.css">
     <link rel="stylesheet" href="assets/test-support.css">
 
+    <!--
+      This isn't ideal, but I'm not sure how to get access to the "virtual head tag"
+      in testing mode. It doesn't seem to load index.html for the dummy app,
+      rather it appends the template to the testing div
+    -->
+    {{content-for 'server-variables'}}
+
     {{content-for 'head-footer'}}
     {{content-for 'test-head-footer'}}
   </head>

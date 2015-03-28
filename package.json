@@ -1,9 +1,8 @@
 {
   "name": "ember-cli-server-variables",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Insert meta tag server variables into ember-cli built Ember applications.",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
@@ -11,11 +10,10 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Ben Limmer <hello@benlimmer.com> (http://benlimmer.com/)",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -35,6 +33,7 @@
     "ember-addon"
   ],
   "dependencies": {
+    "chalk": "^1.0.0",
     "ember-cli-babel": "^4.0.0"
   },
   "ember-addon": {

@@ -16,6 +16,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    serverVariables: {
+      tagPrefix: 'prefix',
+      defaults: {
+        token: 'example',
+        location: 'Denver',
+        foo: 'bar'
+      }
     }
   };
 
@@ -37,6 +45,15 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.serverVariables = {
+      tagPrefix: 'prefix',
+      defaults: {
+        token: 'example',
+        location: 'Denver',
+        foo: 'bar'
+      }
+    };
   }
 
   if (environment === 'production') {
