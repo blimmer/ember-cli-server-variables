@@ -7,7 +7,6 @@ import startApp from '../helpers/start-app';
 import ENV from 'dummy/config/environment';
 import {
   setPrefix,
-  assertServerVarPresent,
   getAllServerVars,
   getServerVar
 } from '../helpers/head-tags';

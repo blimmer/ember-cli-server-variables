@@ -14,12 +14,6 @@ function cleanupHeadTag(name) {
   Ember.$(`head meta[name=${prefix}-${name}]`).remove();
 }
 
-function assertServerVarPresent(assert, name, content) {
-  var tag = Ember.$(`head meta[name=${name}]`);
-  assert(tag.attr(name)).equals(name);
-  assert(tag.attr(content)).equals(content);
-}
-
 function getAllServerVars() {
   return Ember.$(`head meta[name^=${prefix}]`);
 }
@@ -30,7 +24,6 @@ function getServerVar(name) {
 
 export {
   setPrefix,
-  assertServerVarPresent,
   getAllServerVars,
   getServerVar,
   cleanupHeadTag,
