@@ -5,8 +5,13 @@ function setPrefix(definedPrefix) {
   prefix = definedPrefix;
 }
 
-function cleanupHeadTags() {
-  getAllServerVars().remove();
+function addHeadTag(name, content) {
+  var tag = `<meta name='${prefix}-${name}' content='${content}'>`;
+  Ember.$('head').append(tag);
+}
+
+function cleanupHeadTag(name) {
+  Ember.$(`head meta[name=${prefix}-${name}]`).remove();
 }
 
 function assertServerVarPresent(assert, name, content) {
@@ -19,4 +24,15 @@ function getAllServerVars() {
   return Ember.$(`head meta[name^=${prefix}]`);
 }
 
-export { setPrefix, cleanupHeadTags, assertServerVarPresent, getAllServerVars };
+function getServerVar(name) {
+  return Ember.$(`head meta[name^=${prefix}-${name}]`);
+}
+
+export {
+  setPrefix,
+  assertServerVarPresent,
+  getAllServerVars,
+  getServerVar,
+  cleanupHeadTag,
+  addHeadTag
+};

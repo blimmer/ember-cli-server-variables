@@ -45,15 +45,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-
-    ENV.serverVariables = {
-      tagPrefix: 'prefix',
-      defaults: {
-        token: 'example',
-        location: 'Denver',
-        foo: 'bar'
-      }
-    };
   }
 
   if (environment === 'production') {

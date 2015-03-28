@@ -8,7 +8,8 @@ import ENV from 'dummy/config/environment';
 import {
   setPrefix,
   assertServerVarPresent,
-  getAllServerVars
+  getAllServerVars,
+  getServerVar
 } from '../helpers/head-tags';
 
 var application;
@@ -32,5 +33,14 @@ test('it appends all the variables defined in the environment file', function(as
   andThen(function() {
     var tags = getAllServerVars();
     assert.equal(tags.length, 3);
+
+    var tokenTag = getServerVar('token');
+    assert.equal(tokenTag.attr('content'), 'example');
+
+    var locationTag = getServerVar('location');
+    assert.equal(locationTag.attr('content'), 'Denver');
+
+    var fooTag = getServerVar('foo');
+    assert.equal(fooTag.attr('content'), 'bar');
   });
 });
