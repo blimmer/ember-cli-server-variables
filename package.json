@@ -34,9 +34,18 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
-    "ember-cli-babel": "^4.0.0"
+    "ember-cli-babel": "^4.0.0",
+    "lodash": "^3.6.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blimmer/ember-cli-server-variables.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blimmer/ember-cli-server-variables/issues"
+  },
+  "homepage": "https://github.com/blimmer/ember-cli-server-variables"
 }

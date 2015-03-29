@@ -19,7 +19,7 @@ test('it returns the tag content when found', function(assert) {
   addHeadTag('service-test-location', 'Denver');
 
   var service = this.subject();
-  assert.equal(service.get('service-test-location'), 'Denver');
+  assert.equal(service.get('serviceTestLocation'), 'Denver');
 
   cleanupHeadTag('service-test-location');
 });
@@ -36,7 +36,18 @@ test('it returns undefined when content is not set', function(assert) {
   addHeadTag('service-test-foo', '');
 
   var service = this.subject();
-  assert.equal(service.get('service-test-foo'), undefined);
+  assert.equal(service.get('serviceTestFoo'), undefined);
+
+  cleanupHeadTag('service-test-foo');
+});
+
+test('it accepts dasherized or camelcased', function(assert) {
+  setPrefix(ENV.serverVariables.tagPrefix);
+  addHeadTag('service-test-foo', 'something');
+
+  var service = this.subject();
+  assert.equal(service.get('serviceTestFoo'), 'something');
+  assert.equal(service.get('service-test-foo'), 'something');
 
   cleanupHeadTag('service-test-foo');
 });

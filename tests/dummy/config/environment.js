@@ -19,6 +19,7 @@ module.exports = function(environment) {
     },
     serverVariables: {
       tagPrefix: 'prefix',
+      vars: ['token', 'location', 'foo', 'foo-bar-baz'],
       defaults: {
         token: 'example',
         location: 'Denver',

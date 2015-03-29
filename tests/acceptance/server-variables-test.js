@@ -31,7 +31,7 @@ test('it appends all the variables defined in the environment file', function(as
 
   andThen(function() {
     var tags = getAllServerVars();
-    assert.equal(tags.length, 3);
+    assert.equal(tags.length, 4);
 
     var tokenTag = getServerVar('token');
     assert.equal(tokenTag.attr('content'), 'example');
@@ -41,6 +41,9 @@ test('it appends all the variables defined in the environment file', function(as
 
     var fooTag = getServerVar('foo');
     assert.equal(fooTag.attr('content'), 'bar');
+
+    var fooBarBazTag = getServerVar('foo-bar-baz');
+    assert.equal(fooBarBazTag.attr('content'), '');
   });
 });
 
