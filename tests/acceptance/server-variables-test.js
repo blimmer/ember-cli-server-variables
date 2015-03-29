@@ -43,3 +43,12 @@ test('it appends all the variables defined in the environment file', function(as
     assert.equal(fooTag.attr('content'), 'bar');
   });
 });
+
+test('it can read properties as a computed one-way', function(assert) {
+  visit('/');
+
+  andThen(function() {
+    var indexController = application.__container__.lookup('controller:index');
+    assert.equal(indexController.get('token'), 'example');
+  });
+});
