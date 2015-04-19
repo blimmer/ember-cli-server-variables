@@ -104,7 +104,7 @@ Ember app. You can use it like this:
 
 ```javascript
 MyController = Ember.Controller.extend({
-  serverVariablesService = Ember.inject.service('serverVariables'),
+  serverVariablesService: Ember.inject.service('serverVariables'),
 
   userLocation: Ember.computed.reads('serverVariablesService.userLocation')
 });
