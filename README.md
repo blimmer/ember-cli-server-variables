@@ -1,4 +1,4 @@
-# ember-cli-server-variables [![Build Status](https://travis-ci.org/blimmer/ember-cli-server-variables.svg?branch=master)](https://travis-ci.org/blimmer/ember-cli-server-variables) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-server-variables.svg)](http://emberobserver.com/addons/ember-cli-server-variables)
+# ember-cli-server-variables [![Build Status](https://travis-ci.org/blimmer/ember-cli-server-variables.svg?branch=master)](https://travis-ci.org/blimmer/ember-cli-server-variables) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-server-variables.svg)](http://emberobserver.com/addons/ember-cli-server-variables) [![Code Climate](https://codeclimate.com/github/blimmer/ember-cli-server-variables/badges/gpa.svg)](https://codeclimate.com/github/blimmer/ember-cli-server-variables)
 
 An [Ember CLI](http://www.ember-cli.com/) add-on to support adding variables
 to the generated index.html file's `head` tag.
