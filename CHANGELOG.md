@@ -14,4 +14,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Initial implementation of ember-cli-server-variables
 
 [unreleased]: https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.2...HEAD
-[0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
+[0.0.2]: https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.1...v0.0.2
