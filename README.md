@@ -28,7 +28,7 @@ You need to install and configure this add-on for it to work properly.
 ### Installation
 In your CLI project, run
 ```
-ember install:addon ember-cli-server-variables
+ember install ember-cli-server-variables
 ```
 
 ### Configuration
