@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added CHANGELOG.md file to track changes
 
-## [0.0.1]
+## 0.0.1
 ### Added
 - Initial implementation of ember-cli-server-variables
 
