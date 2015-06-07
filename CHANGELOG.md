@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.0.3]
+### Fixed
+- Upgraded to ember-cli 0.2.7
+
 ## [0.0.2]
 ### Fixed
 - Fixed `tagPrefix` defaulting to `undefined` instead of `modulePrefix` [#7](https://github.com/blimmer/ember-cli-server-variables/issues/7)
@@ -15,3 +19,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 [unreleased]: https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.2...HEAD
 [0.0.2]: https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.1...v0.0.2
+[0.0.3]: https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.2...v0.0.3
