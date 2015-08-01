@@ -82,7 +82,7 @@ module.exports = function(environment) {
       tagPrefix: 'your-app',
       vars: ['app-token', 'user-location', 'key']
     }
-  }
+  };
 
   ...
 
@@ -90,9 +90,9 @@ module.exports = function(environment) {
     ENV.serverVariables.defaults = {
       'app-token': 'dev-app-token',
       'user-location': 'Denver'
-    }
+    };
   }
-}
+};
 ```
 
 ### Usage
