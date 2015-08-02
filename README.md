@@ -69,14 +69,11 @@ Next, modify your `environment.js` file. Convention is to use dasherized names.
 
 Configuration Variables:
 
-  * vars (**required**): An array of your server variables.
   * tagPrefix: a prefix to append to every meta tag to avoid collision. Defaults to ENV.modulePrefix.
-  * defaults: a POJO of default values for your server variables.
-
- an array that describes
-the variables you want inserted. If you don't provide defaults,
-the fallback is a blank string. Most of the time you'll probably want to only
-provide defaults in development mode.
+  * vars (**required**): An array of your server variables.
+  * defaults: a POJO of default values for your server variables. **Note:** If
+  you don't provide defaults, the fallback is a blank string. Most of the time
+  you'll probably want to only provide defaults in development mode.
 
 ```javascript
 module.exports = function(environment) {
@@ -85,7 +82,7 @@ module.exports = function(environment) {
       tagPrefix: 'your-app',
       vars: ['app-token', 'user-location', 'key']
     }
-  }
+  };
 
   ...
 
@@ -93,9 +90,9 @@ module.exports = function(environment) {
     ENV.serverVariables.defaults = {
       'app-token': 'dev-app-token',
       'user-location': 'Denver'
-    }
+    };
   }
-}
+};
 ```
 
 ### Usage
