@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-server-variables",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Insert meta tag server variables into ember-cli built Ember applications.",
   "directories": {
     "test": "tests"
