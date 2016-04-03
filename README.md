@@ -17,10 +17,7 @@ server, such as a session application token to communicate with your API or a us
 location based on their request IP address.  
 
 You can modify the blank `content` tags on your generated index.html file using
-a library like [Cheerio](https://github.com/cheeriojs/cheerio). Eventually, with
-["configuration-only"](https://github.com/ember-cli/ember-cli-deploy/issues/89)
-deployments and ember-cli-deploy, Cheerio will be unnecessary because you can
-construct the entire index.html file on your application server.
+a library like [Cheerio](https://github.com/cheeriojs/cheerio).
 
 ## Usage
 You need to install and configure this add-on for it to work properly.
@@ -32,45 +29,12 @@ ember install ember-cli-server-variables
 ```
 
 ### Configuration
-First, you need to modify your index.html file to have a `{{content-for 'server-variables'}}`
-block. Here's an example:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dummy</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {{content-for 'head'}}
-
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/dummy.css">
-
-    {{content-for 'server-variables'}}
-
-    {{content-for 'head-footer'}}
-  </head>
-  <body>
-    {{content-for 'body'}}
-
-    <script src="assets/vendor.js"></script>
-    <script src="assets/dummy.js"></script>
-
-    {{content-for 'body-footer'}}
-  </body>
-</html>
-```
-
-Next, modify your `environment.js` file. Convention is to use dasherized names.
+Add a `serverVariables` block your `environment.js` file.
 
 Configuration Variables:
 
   * tagPrefix: a prefix to append to every meta tag to avoid collision. Defaults to ENV.modulePrefix.
-  * vars (**required**): An array of your server variables.
+  * vars (**required**): An array of your server variables. Convention is to use dasherized names.
   * defaults: a POJO of default values for your server variables. **Note:** If
   you don't provide defaults, the fallback is a blank string. Most of the time
   you'll probably want to only provide defaults in development mode.
@@ -100,12 +64,57 @@ This plugin provides a service to retrieve the server variables in your
 Ember app. You can use it like this:
 
 ```javascript
-MyController = Ember.Controller.extend({
+export default Ember.Component.extend({
   serverVariablesService: Ember.inject.service('serverVariables'),
 
   userLocation: Ember.computed.reads('serverVariablesService.userLocation')
 });
 ```
+
+## Troubleshooting
+Some tips & tricks if something isn't working correctly.
+
+### Check that the `{{content-for 'server-variables'}}` tag is present in your `app/index.html` file
+
+This is how we insert the meta tags into your app. We try to do this automatically
+when you `ember install` this addon, but there are potentially times where this
+operation could fail. Your `app/index.html` file should look something like this:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dummy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{content-for 'head'}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/dummy.css">
+
+    <!-- THIS IS THE IMPORTANT BIT! -->
+    {{content-for 'server-variables'}}
+    <!-------------------------------->
+
+    {{content-for 'head-footer'}}
+  </head>
+  <body>
+    {{content-for 'body'}}
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/dummy.js"></script>
+
+    {{content-for 'body-footer'}}
+  </body>
+</html>
+```
+
+### Ensure you've defined a `vars` array in your `config/environment.js` file
+Make sure that you followed the [configuration instructions](#configuration)
+to get your vars defined.
 
 # Development
 ## Installation
