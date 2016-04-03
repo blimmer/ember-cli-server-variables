@@ -1,12 +1,24 @@
 # Change Log
 
+## [1.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/1.0.0) (2016-04-03)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.4...1.0.0)
+
+**Closed issues:**
+
+- Introduce a generator [\#11](https://github.com/blimmer/ember-cli-server-variables/issues/11)
+- Upgrade lodash dependency to 4.x [\#10](https://github.com/blimmer/ember-cli-server-variables/issues/10)
+
+**Merged pull requests:**
+
+- Inject the content-for helper on install. [\#13](https://github.com/blimmer/ember-cli-server-variables/pull/13) ([blimmer](https://github.com/blimmer))
+- Ember CLI Updates [\#12](https://github.com/blimmer/ember-cli-server-variables/pull/12) ([blimmer](https://github.com/blimmer))
+
 ## [v0.0.4](https://github.com/blimmer/ember-cli-server-variables/tree/v0.0.4) (2015-08-02)
 [Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.3...v0.0.4)
 
 **Closed issues:**
 
 - Test lib/content-for-helper.js [\#4](https://github.com/blimmer/ember-cli-server-variables/issues/4)
-- Ember CLI 1.13.6
 
 **Merged pull requests:**
 
