@@ -48,7 +48,10 @@
     "lodash": "^4.7.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "versionCompatibility": {
+      "ember": ">=1.10.1"
+    }
   },
   "main": "index.js",
   "bugs": {
