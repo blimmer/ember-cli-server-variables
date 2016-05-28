@@ -1,7 +1,18 @@
 # Change Log
 
-## [1.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/1.0.0) (2016-04-03)
-[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.4...1.0.0)
+## [2.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.0) (2016-05-28)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v1.0.0...2.0.0)
+
+**Implemented enhancements:**
+
+- Support parsing JSON from server tags. [\#16](https://github.com/blimmer/ember-cli-server-variables/pull/16) ([blimmer](https://github.com/blimmer))
+
+**Closed issues:**
+
+- Support JSON as config value [\#15](https://github.com/blimmer/ember-cli-server-variables/issues/15)
+
+## [v1.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/v1.0.0) (2016-04-03)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v0.0.4...v1.0.0)
 
 **Closed issues:**
 
