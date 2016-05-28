@@ -8,6 +8,7 @@ to the generated index.html file's `head` tag.
   <head>
     <meta name='your-app-token' content='example:app:token'>
     <meta name='your-app-user-location' content='Denver'>
+    <meta name='your-app-json-data' content='{"foo":"bar"}'>
   </head>
 </html>
 ```
@@ -33,8 +34,8 @@ Add a `serverVariables` block your `environment.js` file.
 
 Configuration Variables:
 
-  * tagPrefix: a prefix to append to every meta tag to avoid collision. Defaults to ENV.modulePrefix.
   * vars (**required**): An array of your server variables. Convention is to use dasherized names.
+  * tagPrefix: a prefix to append to every meta tag to avoid collision. Defaults to `ENV.modulePrefix`.
   * defaults: a POJO of default values for your server variables. **Note:** If
   you don't provide defaults, the fallback is a blank string. Most of the time
   you'll probably want to only provide defaults in development mode.
