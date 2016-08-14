@@ -21,4 +21,4 @@ install:
   - bower install
 
 script:
-  - ember try:each
+  - ember try:each && mocha tests/**/*-test-node.js
