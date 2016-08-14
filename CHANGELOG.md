@@ -1,5 +1,13 @@
 # Change Log
 
+## [2.0.1](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.1) (2016-08-14)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/2.0.0...2.0.1)
+
+**Merged pull requests:**
+
+- Add test for content-for helper. [\#18](https://github.com/blimmer/ember-cli-server-variables/pull/18) ([blimmer](https://github.com/blimmer))
+- Upgrade Ember & Ember CLI. [\#17](https://github.com/blimmer/ember-cli-server-variables/pull/17) ([blimmer](https://github.com/blimmer))
+
 ## [2.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.0) (2016-05-28)
 [Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v1.0.0...2.0.0)
 
