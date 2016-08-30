@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.2](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.2) (2016-08-30)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/2.0.1...2.0.2)
+
+**Merged pull requests:**
+
+- Fixes a generator error [\#20](https://github.com/blimmer/ember-cli-server-variables/pull/20) ([xomaczar](https://github.com/xomaczar))
+
 ## [2.0.1](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.1) (2016-08-14)
 [Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/2.0.0...2.0.1)
 
