@@ -1,7 +1,8 @@
-/* jshint -W030 */
-/* jshint node: true */
+/* eslint-env node */
 var expect = require('chai').expect;
 var contentForHelper = require('../../lib/content-for-helper');
+var describe = require('mocha').describe;
+var it = require('mocha').it;
 
 describe('content-for-helper', function() {
   describe('generateServerVariableString', function() {
