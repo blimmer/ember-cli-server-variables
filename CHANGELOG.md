@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.1.0](https://github.com/blimmer/ember-cli-server-variables/tree/2.1.0) (2017-03-29)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/2.0.2...2.1.0)
+
+**Merged pull requests:**
+
+- Update ember-cli. [\#22](https://github.com/blimmer/ember-cli-server-variables/pull/22) ([blimmer](https://github.com/blimmer))
+
 ## [2.0.2](https://github.com/blimmer/ember-cli-server-variables/tree/2.0.2) (2016-08-30)
 [Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/2.0.1...2.0.2)
 
