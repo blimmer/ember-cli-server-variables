@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
 import ServerVariablesService from 'ember-cli-server-variables/services/server-variables';
 import ENV from '../config/environment';
 
 export default ServerVariablesService.extend({
-  env: Ember.computed(function() {
+  env: computed(function() {
     return ENV;
   })
 });

@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import $ from 'jquery';
 
 var prefix = null;
 function setPrefix(definedPrefix) {
@@ -7,19 +7,19 @@ function setPrefix(definedPrefix) {
 
 function addHeadTag(name, content) {
   var tag = `<meta name='${prefix}-${name}' content='${content}'>`;
-  Ember.$('head').append(tag);
+  $('head').append(tag);
 }
 
 function cleanupHeadTag(name) {
-  Ember.$(`head meta[name=${prefix}-${name}]`).remove();
+  $(`head meta[name=${prefix}-${name}]`).remove();
 }
 
 function getAllServerVars() {
-  return Ember.$(`head meta[name^=${prefix}]`);
+  return $(`head meta[name^=${prefix}]`);
 }
 
 function getServerVar(name) {
-  return Ember.$(`head meta[name^=${prefix}-${name}]`);
+  return $(`head meta[name^=${prefix}-${name}]`);
 }
 
 export {

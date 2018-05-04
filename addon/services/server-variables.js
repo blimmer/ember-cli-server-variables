@@ -1,10 +1,7 @@
-import Ember from 'ember';
-
-const {
-  isBlank,
-  String: { dasherize },
-  Service,
-} = Ember;
+import $ from 'jquery';
+import { isBlank } from '@ember/utils';
+import { dasherize } from '@ember/string';
+import Service from '@ember/service';
 
 export default Service.extend({
   unknownProperty: function(serverVar) {
@@ -12,7 +9,7 @@ export default Service.extend({
     var prefix = ENV.serverVariables.tagPrefix || ENV.modulePrefix;
     var dasherizedVar = dasherize(serverVar);
 
-    var content = Ember.$(`head meta[name=${prefix}-${dasherizedVar}]`).attr('content');
+    var content = $(`head meta[name=${prefix}-${dasherizedVar}]`).attr('content');
     if (!isBlank(content)) {
       try {
         return JSON.parse(content);
