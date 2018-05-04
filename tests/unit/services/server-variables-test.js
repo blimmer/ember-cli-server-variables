@@ -1,7 +1,5 @@
-import {
-  moduleFor,
-  test
-} from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
 import {
   setPrefix,
   addHeadTag,
@@ -9,52 +7,54 @@ import {
 } from '../../helpers/head-tags';
 import ENV from 'dummy/config/environment';
 
-moduleFor('service:server-variables', {
+module('service:server-variables', function(hooks) {
+  setupTest(hooks);
+
   // Specify the other units that are required for this test.
-  beforeEach() {
+  hooks.beforeEach(function() {
     setPrefix(ENV.serverVariables.tagPrefix);
-  }
-});
+  });
 
-test('it returns the tag content when found', function(assert) {
-  addHeadTag('service-test-location', 'Denver');
+  test('it returns the tag content when found', function(assert) {
+    addHeadTag('service-test-location', 'Denver');
 
-  const service = this.subject();
-  assert.equal(service.get('serviceTestLocation'), 'Denver');
+    const service = this.owner.lookup('service:server-variables');
+    assert.equal(service.get('serviceTestLocation'), 'Denver');
 
-  cleanupHeadTag('service-test-location');
-});
+    cleanupHeadTag('service-test-location');
+  });
 
-test('it returns undefined when the content is not found', function(assert) {
-  const service = this.subject();
-  assert.equal(service.get('nonExistant'), undefined);
-});
+  test('it returns undefined when the content is not found', function(assert) {
+    const service = this.owner.lookup('service:server-variables');
+    assert.equal(service.get('nonExistant'), undefined);
+  });
 
-test('it returns undefined when content is not set', function(assert) {
-  addHeadTag('service-test-foo', '');
+  test('it returns undefined when content is not set', function(assert) {
+    addHeadTag('service-test-foo', '');
 
-  const service = this.subject();
-  assert.equal(service.get('serviceTestFoo'), undefined);
+    const service = this.owner.lookup('service:server-variables');
+    assert.equal(service.get('serviceTestFoo'), undefined);
 
-  cleanupHeadTag('service-test-foo');
-});
+    cleanupHeadTag('service-test-foo');
+  });
 
-test('it accepts dasherized or camelcased', function(assert) {
-  addHeadTag('service-test-foo', 'something');
+  test('it accepts dasherized or camelcased', function(assert) {
+    addHeadTag('service-test-foo', 'something');
 
-  const service = this.subject();
-  assert.equal(service.get('serviceTestFoo'), 'something');
-  assert.equal(service.get('service-test-foo'), 'something');
+    const service = this.owner.lookup('service:server-variables');
+    assert.equal(service.get('serviceTestFoo'), 'something');
+    assert.equal(service.get('service-test-foo'), 'something');
 
-  cleanupHeadTag('service-test-foo');
-});
+    cleanupHeadTag('service-test-foo');
+  });
 
-test('it parses JSON tags', function(assert) {
-  addHeadTag('service-test-json', JSON.stringify({ foo: 'foo', bar: 'bar' }));
+  test('it parses JSON tags', function(assert) {
+    addHeadTag('service-test-json', JSON.stringify({ foo: 'foo', bar: 'bar' }));
 
-  const service = this.subject();
-  const res = service.get('service-test-json');
-  assert.deepEqual(res, { foo: 'foo', bar: 'bar' });
-  assert.equal(typeof res, 'object');
-  assert.notEqual(typeof res, 'string');
+    const service = this.owner.lookup('service:server-variables');
+    const res = service.get('service-test-json');
+    assert.deepEqual(res, { foo: 'foo', bar: 'bar' });
+    assert.equal(typeof res, 'object');
+    assert.notEqual(typeof res, 'string');
+  });
 });
