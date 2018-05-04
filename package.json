@@ -28,13 +28,13 @@
     "test:all": "ember try:each && mocha tests/**/*-test-node.js"
   },
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "^2.4.1 ",
     "ember-cli-babel": "^6.6.0",
     "lodash": "^4.7.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
-    "chai": "^3.5.0",
+    "chai": "^4.1.2 ",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.2",
     "ember-cli-dependency-checker": "^2.0.0",
@@ -58,7 +58,7 @@
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^6.0.1",
     "loader.js": "^4.2.3",
-    "mocha": "^3.0.2"
+    "mocha": "5.1.1"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
