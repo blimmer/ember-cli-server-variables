@@ -1,6 +1,5 @@
-/* jshint node: true */
 'use strict';
-var contentForHelper = require('./lib/content-for-helper');
+const contentForHelper = require('./lib/content-for-helper');
 
 module.exports = {
   name: 'ember-cli-server-variables',

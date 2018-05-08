@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import { reads } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
-  serverVariablesService: Ember.inject.service('serverVariables'),
+export default Controller.extend({
+  serverVariablesService: service('serverVariables'),
 
-  token: Ember.computed.reads('serverVariablesService.token')
+  token: reads('serverVariablesService.token')
 });

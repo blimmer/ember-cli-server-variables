@@ -1,4 +1,6 @@
 /* eslint-env node */
+
+import require from 'require';
 var expect = require('chai').expect;
 var contentForHelper = require('../../lib/content-for-helper');
 var describe = require('mocha').describe;

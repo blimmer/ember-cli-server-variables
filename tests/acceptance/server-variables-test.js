@@ -1,35 +1,25 @@
-import Ember from 'ember';
+import { visit } from '@ember/test-helpers';
 import {
   module,
   test
 } from 'qunit';
-import startApp from '../helpers/start-app';
 import ENV from 'dummy/config/environment';
 import {
   setPrefix,
   getAllServerVars,
   getServerVar
 } from '../helpers/head-tags';
+import { setupApplicationTest } from 'ember-qunit';
 
-var application;
-
-// All Server Variables for these tests are configured in the dummy app's
-// environment.js file.
-module('Acceptance: ServerVariables', {
-  beforeEach: function() {
-    application = startApp();
+module('Acceptance: ServerVariables', function (hooks) {
+  setupApplicationTest(hooks);
+  hooks.beforeEach(function() {
     setPrefix(ENV.serverVariables.tagPrefix);
-  },
+  });
 
-  afterEach: function() {
-    Ember.run(application, 'destroy');
-  }
-});
+  test('it appends all the variables defined in the environment file', async function(assert) {
+    await visit('/');
 
-test('it appends all the variables defined in the environment file', function(assert) {
-  visit('/');
-
-  andThen(function() {
     var tags = getAllServerVars();
     assert.equal(tags.length, 4);
 
@@ -45,13 +35,11 @@ test('it appends all the variables defined in the environment file', function(as
     var fooBarBazTag = getServerVar('foo-bar-baz');
     assert.equal(fooBarBazTag.attr('content'), '');
   });
-});
 
-test('it can read properties as a computed one-way', function(assert) {
-  visit('/');
+  test('it can read properties as a computed one-way', async function(assert) {
+    await visit('/');
 
-  andThen(function() {
-    var indexController = application.__container__.lookup('controller:index');
+    var indexController = this.owner.lookup('controller:index');
     assert.equal(indexController.get('token'), 'example');
   });
 });
