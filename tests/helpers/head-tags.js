@@ -1,25 +1,30 @@
-import $ from 'jquery';
-
 var prefix = null;
 function setPrefix(definedPrefix) {
   prefix = definedPrefix;
 }
 
 function addHeadTag(name, content) {
-  var tag = `<meta name='${prefix}-${name}' content='${content}'>`;
-  $('head').append(tag);
+  var meta = document.createElement('meta');
+  meta.name = `${prefix}-${name}`;
+  meta.content = content;
+  document.querySelector('head').append(meta);
 }
 
 function cleanupHeadTag(name) {
-  $(`head meta[name=${prefix}-${name}]`).remove();
+  document.querySelector(`head meta[name=${prefix}-${name}]`).remove();
 }
 
 function getAllServerVars() {
-  return $(`head meta[name^=${prefix}]`);
+  return document.querySelectorAll(`head meta[name^=${prefix}]`);
 }
 
 function getServerVar(name) {
-  return $(`head meta[name^=${prefix}-${name}]`);
+  var tag = document.querySelector(`head meta[name^=${prefix}-${name}]`);
+  if (tag) {
+    return tag.content;
+  }
+
+  return null;
 }
 
 export {

@@ -23,17 +23,17 @@ module('Acceptance: ServerVariables', function (hooks) {
     var tags = getAllServerVars();
     assert.equal(tags.length, 4);
 
-    var tokenTag = getServerVar('token');
-    assert.equal(tokenTag.attr('content'), 'example');
+    var tokenVar = getServerVar('token');
+    assert.equal(tokenVar, 'example');
 
-    var locationTag = getServerVar('location');
-    assert.equal(locationTag.attr('content'), 'Denver');
+    var locationVar = getServerVar('location');
+    assert.equal(locationVar, 'Denver');
 
-    var fooTag = getServerVar('foo');
-    assert.equal(fooTag.attr('content'), 'bar');
+    var fooVar = getServerVar('foo');
+    assert.equal(fooVar, 'bar');
 
-    var fooBarBazTag = getServerVar('foo-bar-baz');
-    assert.equal(fooBarBazTag.attr('content'), '');
+    var fooBarBazVar = getServerVar('foo-bar-baz');
+    assert.equal(fooBarBazVar, '');
   });
 
   test('it can read properties as a computed one-way', async function(assert) {

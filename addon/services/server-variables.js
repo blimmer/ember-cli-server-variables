@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { isBlank } from '@ember/utils';
 import { dasherize } from '@ember/string';
 import Service from '@ember/service';
@@ -9,7 +8,10 @@ export default Service.extend({
     var prefix = ENV.serverVariables.tagPrefix || ENV.modulePrefix;
     var dasherizedVar = dasherize(serverVar);
 
-    var content = $(`head meta[name=${prefix}-${dasherizedVar}]`).attr('content');
+    // ensure we don't die in fastboot by checking if document exists
+    var tag = document ?  document.querySelector(`head meta[name=${prefix}-${dasherizedVar}]`) : null;
+    var content = tag ? tag.content : null;
+
     if (!isBlank(content)) {
       try {
         return JSON.parse(content);
