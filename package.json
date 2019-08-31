@@ -30,7 +30,7 @@
   "dependencies": {
     "chalk": "^2.4.1 ",
     "ember-cli-babel": "^6.6.0",
-    "lodash": "^4.7.0"
+    "lodash": "^4.17.13"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
