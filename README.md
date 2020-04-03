@@ -128,7 +128,6 @@ to get your vars defined.
 
 * `git clone` this repository
 * `npm install`
-* `bower install`
 
 ## Running
 
