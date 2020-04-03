@@ -15,10 +15,16 @@ to the generated index.html file's `head` tag.
 
 This is handy when you need to dynamically insert variables from your application
 server, such as a session application token to communicate with your API or a user's
-location based on their request IP address.  
+location based on their request IP address.
 
 You can modify the blank `content` tags on your generated index.html file using
 a library like [Cheerio](https://github.com/cheeriojs/cheerio).
+
+## Compatibility
+
+* Ember.js v3.12 or above
+* Ember CLI v2.13 or above
+* Node.js v10 or above
 
 ## Usage
 You need to install and configure this add-on for it to work properly.
@@ -138,4 +144,5 @@ to get your vars defined.
 
 * `ember build`
 
+See the [Contributing](CONTRIBUTING.md) guide for details.
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
