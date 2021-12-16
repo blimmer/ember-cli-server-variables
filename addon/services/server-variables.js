@@ -2,8 +2,8 @@ import { isBlank } from '@ember/utils';
 import { dasherize } from '@ember/string';
 import Service from '@ember/service';
 
-export default Service.extend({
-  unknownProperty: function (serverVar) {
+export default class ServerVariablesService extends Service {
+  unknownProperty(serverVar) {
     var ENV = this.env;
     var prefix = ENV.serverVariables.tagPrefix || ENV.modulePrefix;
     var dasherizedVar = dasherize(serverVar);
@@ -22,5 +22,5 @@ export default Service.extend({
         return content;
       }
     }
-  },
-});
+  }
+}
