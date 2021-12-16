@@ -1,6 +1,10 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import { setPrefix, addHeadTag, cleanupHeadTag } from '../../helpers/head-tags';
+import {
+  setPrefix,
+  addHeadTag,
+  cleanupHeadTag
+} from '../../helpers/head-tags';
 import ENV from 'dummy/config/environment';
 
 module('service:server-variables', function (hooks) {

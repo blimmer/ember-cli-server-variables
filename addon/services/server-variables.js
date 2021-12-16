@@ -4,7 +4,7 @@ import Service from '@ember/service';
 
 export default Service.extend({
   unknownProperty: function (serverVar) {
-    var ENV = this.get('env');
+    var ENV = this.env;
     var prefix = ENV.serverVariables.tagPrefix || ENV.modulePrefix;
     var dasherizedVar = dasherize(serverVar);
 
