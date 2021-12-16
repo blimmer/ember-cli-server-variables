@@ -8,5 +8,5 @@ module.exports = {
     if (type === 'server-variables') {
       return contentForHelper.generateServerVariableString(config);
     }
-  }
+  },
 };

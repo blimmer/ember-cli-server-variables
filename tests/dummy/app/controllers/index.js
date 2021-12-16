@@ -5,5 +5,5 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   serverVariablesService: service('serverVariables'),
 
-  token: reads('serverVariablesService.token')
+  token: reads('serverVariablesService.token'),
 });

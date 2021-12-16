@@ -27,9 +27,9 @@ module.exports = function (environment) {
       defaults: {
         token: 'example',
         location: 'Denver',
-        foo: 'bar'
-      }
-    }
+        foo: 'bar',
+      },
+    },
   };
 
   if (environment === 'development') {
