@@ -1,21 +1,17 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import {
-  setPrefix,
-  addHeadTag,
-  cleanupHeadTag
-} from '../../helpers/head-tags';
+import { setPrefix, addHeadTag, cleanupHeadTag } from '../../helpers/head-tags';
 import ENV from 'dummy/config/environment';
 
-module('service:server-variables', function(hooks) {
+module('service:server-variables', function (hooks) {
   setupTest(hooks);
 
   // Specify the other units that are required for this test.
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     setPrefix(ENV.serverVariables.tagPrefix);
   });
 
-  test('it returns the tag content when found', function(assert) {
+  test('it returns the tag content when found', function (assert) {
     addHeadTag('service-test-location', 'Denver');
 
     const service = this.owner.lookup('service:server-variables');
@@ -24,12 +20,12 @@ module('service:server-variables', function(hooks) {
     cleanupHeadTag('service-test-location');
   });
 
-  test('it returns undefined when the content is not found', function(assert) {
+  test('it returns undefined when the content is not found', function (assert) {
     const service = this.owner.lookup('service:server-variables');
     assert.equal(service.get('nonExistant'), undefined);
   });
 
-  test('it returns undefined when content is not set', function(assert) {
+  test('it returns undefined when content is not set', function (assert) {
     addHeadTag('service-test-foo', '');
 
     const service = this.owner.lookup('service:server-variables');
@@ -38,7 +34,7 @@ module('service:server-variables', function(hooks) {
     cleanupHeadTag('service-test-foo');
   });
 
-  test('it accepts dasherized or camelcased', function(assert) {
+  test('it accepts dasherized or camelcased', function (assert) {
     addHeadTag('service-test-foo', 'something');
 
     const service = this.owner.lookup('service:server-variables');
@@ -48,7 +44,7 @@ module('service:server-variables', function(hooks) {
     cleanupHeadTag('service-test-foo');
   });
 
-  test('it parses JSON tags', function(assert) {
+  test('it parses JSON tags', function (assert) {
     addHeadTag('service-test-json', JSON.stringify({ foo: 'foo', bar: 'bar' }));
 
     const service = this.owner.lookup('service:server-variables');

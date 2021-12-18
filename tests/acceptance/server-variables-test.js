@@ -1,23 +1,20 @@
 import { visit } from '@ember/test-helpers';
-import {
-  module,
-  test
-} from 'qunit';
+import { module, test } from 'qunit';
 import ENV from 'dummy/config/environment';
 import {
   setPrefix,
   getAllServerVars,
-  getServerVar
+  getServerVar,
 } from '../helpers/head-tags';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance: ServerVariables', function (hooks) {
   setupApplicationTest(hooks);
-  hooks.beforeEach(function() {
+  hooks.beforeEach(function () {
     setPrefix(ENV.serverVariables.tagPrefix);
   });
 
-  test('it appends all the variables defined in the environment file', async function(assert) {
+  test('it appends all the variables defined in the environment file', async function (assert) {
     await visit('/');
 
     var tags = getAllServerVars();
@@ -36,7 +33,7 @@ module('Acceptance: ServerVariables', function (hooks) {
     assert.equal(fooBarBazVar, '');
   });
 
-  test('it can read properties as a computed one-way', async function(assert) {
+  test('it can read properties as a computed one-way', async function (assert) {
     await visit('/');
 
     var indexController = this.owner.lookup('controller:index');

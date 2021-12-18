@@ -3,7 +3,7 @@ import ServerVariablesService from 'ember-cli-server-variables/services/server-v
 import ENV from '../config/environment';
 
 export default ServerVariablesService.extend({
-  env: computed(function() {
+  env: computed(function () {
     return ENV;
-  })
+  }),
 });

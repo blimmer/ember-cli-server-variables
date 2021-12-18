@@ -1,9 +1,11 @@
-import { reads } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  serverVariablesService: service('serverVariables'),
+export default class IndexController extends Controller {
+  @service('serverVariables')
+  serverVariablesService;
 
-  token: reads('serverVariablesService.token')
-});
+  get token() {
+    return this.serverVariablesService.get('token');
+  }
+}

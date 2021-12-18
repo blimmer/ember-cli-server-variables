@@ -32,5 +32,5 @@ export {
   getAllServerVars,
   getServerVar,
   cleanupHeadTag,
-  addHeadTag
+  addHeadTag,
 };
