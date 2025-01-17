@@ -6,7 +6,7 @@ import {
   getAllServerVars,
   getServerVar,
 } from '../helpers/head-tags';
-import { setupApplicationTest } from 'ember-qunit';
+import { setupApplicationTest } from 'dummy/tests/helpers';
 
 module('Acceptance: ServerVariables', function (hooks) {
   setupApplicationTest(hooks);

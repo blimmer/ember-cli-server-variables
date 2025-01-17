@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { setupTest } from 'ember-qunit';
+import { setupTest } from 'dummy/tests/helpers';
 import { setPrefix, addHeadTag, cleanupHeadTag } from '../../helpers/head-tags';
 import ENV from 'dummy/config/environment';
 
