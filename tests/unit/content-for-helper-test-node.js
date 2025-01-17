@@ -22,7 +22,7 @@ describe('content-for-helper', function () {
           serverVariables: {
             vars: { foo: 'foo' },
           },
-        })
+        }),
       ).to.be.undefined;
     });
 
@@ -35,7 +35,7 @@ describe('content-for-helper', function () {
       });
 
       expect(res).to.equal(
-        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>"
+        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>",
       );
     });
 
@@ -48,7 +48,7 @@ describe('content-for-helper', function () {
       });
 
       expect(res).to.equal(
-        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>"
+        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>",
       );
     });
 
@@ -62,7 +62,7 @@ describe('content-for-helper', function () {
       });
 
       expect(res).to.equal(
-        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>"
+        "\n<meta name='my-app-foo'content=''>\n<meta name='my-app-bar'content=''>",
       );
     });
   });

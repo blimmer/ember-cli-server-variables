@@ -18,25 +18,25 @@ module('Acceptance: ServerVariables', function (hooks) {
     await visit('/');
 
     var tags = getAllServerVars();
-    assert.equal(tags.length, 4);
+    assert.strictEqual(tags.length, 4);
 
     var tokenVar = getServerVar('token');
-    assert.equal(tokenVar, 'example');
+    assert.strictEqual(tokenVar, 'example');
 
     var locationVar = getServerVar('location');
-    assert.equal(locationVar, 'Denver');
+    assert.strictEqual(locationVar, 'Denver');
 
     var fooVar = getServerVar('foo');
-    assert.equal(fooVar, 'bar');
+    assert.strictEqual(fooVar, 'bar');
 
     var fooBarBazVar = getServerVar('foo-bar-baz');
-    assert.equal(fooBarBazVar, '');
+    assert.strictEqual(fooBarBazVar, '');
   });
 
   test('it can read properties as a computed one-way', async function (assert) {
     await visit('/');
 
     var indexController = this.owner.lookup('controller:index');
-    assert.equal(indexController.get('token'), 'example');
+    assert.strictEqual(indexController.get('token'), 'example');
   });
 });
