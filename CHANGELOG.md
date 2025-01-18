@@ -1,8 +1,16 @@
 # Changelog
 
-## [3.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/3.0.0) (2021-12-18)
+## [v4.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/v4.0.0)
 
-[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v2.4.0...3.0.0)
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v3.0.0...v4.0.0)
+
+**Merged pull requests:**
+
+- \[breaking\] Update Ember to v5.12.0 [\#76](https://github.com/blimmer/ember-cli-server-variables/pull/76) ([jrjohnson](https://github.com/jrjohnson))
+
+## [v3.0.0](https://github.com/blimmer/ember-cli-server-variables/tree/v3.0.0) (2021-12-18)
+
+[Full Changelog](https://github.com/blimmer/ember-cli-server-variables/compare/v2.4.0...v3.0.0)
 
 **Merged pull requests:**
 
