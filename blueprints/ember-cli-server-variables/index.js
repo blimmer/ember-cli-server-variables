@@ -8,7 +8,7 @@ module.exports = {
       '    {{content-for "server-variables"}}',
       {
         before: '  </head>',
-      }
+      },
     );
   },
 };

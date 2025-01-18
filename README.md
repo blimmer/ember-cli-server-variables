@@ -21,16 +21,15 @@ You can modify the blank `content` tags on your generated index.html file using
 a library like [Cheerio](https://github.com/cheeriojs/cheerio).
 
 ## Compatibility
-
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
-* Node.js v12 or above
+- Ember.js v4.12 or above
+- Ember CLI v4.12 or above
+- Node.js v18 or above
 
 ## Usage
 You need to install and configure this add-on for it to work properly.
 
 ### Installation
-In your CLI project, run
+
 ```
 ember install ember-cli-server-variables
 ```
@@ -123,25 +122,9 @@ operation could fail. Your `app/index.html` file should look something like this
 Make sure that you followed the [configuration instructions](#configuration)
 to get your vars defined.
 
-# Development
-## Installation
-
-* `git clone` this repository
-* `npm install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
+## Contributing
 See the [Contributing](CONTRIBUTING.md) guide for details.
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
